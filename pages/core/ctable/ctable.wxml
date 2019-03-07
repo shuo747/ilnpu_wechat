@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<view class="top">
+     <view wx:for="{{['一','二','三','四','五','六','日']}}" class="top-text">周{{item}}</view>
+
+</view>
+<view class="top">
+     <view wx:for="{{dates[selectWeek]}}" class="top-text">
+          <text wx:if="{{index==0}}"> {{item.month}}月{{item.date}}</text>
+          <text wx:elif="{{item.date!=1}}"> {{item.date}}日</text>
+          <text wx:else> {{item.month}}月</text>
+     </view>
+</view>
+<scroll-view scroll-y="true" class="scroll" style='height:{{scroll_height}}rpx'>
+     <view style="height:1400rpx;width:750rpx;display:flex;">
+          <view style="background-color:#A674B9;color:#3A0C4A;">
+               <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14]}}" class="left">
+                    {{item}}
+               </view>
+          </view>
+          <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14]}}">
+               <view style="width:750rpx;margin-top:{{(index+1)*100}}rpx;  position: absolute;border-bottom:1rpx solid {{index==3?'slategray':'lightgray'}};">
+               </view>
+          </view>
+
+
+          <!--课表-->
+          <view wx:for="{{lessons[selectWeek]}}">
+               <!--{{item.name}}-->
+               <block wx:for="{{item}}">
+                    <view wx:if="{{item.id}}" class="flex-item kcb-item" bindtap="showCardView" data-color="{{item.color}}" data-room="{{item.room}}" data-name="{{item.name}}" data-name="{{item.name}}" data-tname="{{item.tname}}" data-week="{{item.week}}" data-times="周{{item.day}}-{{item.section*2+1}} ~ {{item.section*2+item.times}}节"
+                         data-index="{{index}}" style="margin-left:{{(item.day-1)*100+5}}rpx;margin-top:{{(item.section*2)*100+5}}rpx;height:{{item.times*100-10}}rpx;background-color:{{item.color}}">
+                         <view class="smalltext">{{item.name+'@'+item.room}}</view>
+                    </view>
+               </block>
+          </view>
+     </view>
+</scroll-view>
+
+
+
+
+<!-- 底部 -->
+<view class="kb-info-ctn" catchtouchmove="catchMoveDetail">
+
+     <view class="kb-info-title">
+          <block>
+               <text class="kb-info-week" wx:if="{{currentWeek==selectWeek}}"></text>
+               <text class="kb-info-week" wx:else bindtap="returnCurrent">返回{{currentWeek+1}}周</text>
+               <view class="kb-swipers">
+                    <view class="kb-swiper-mask-left" data-target="{{selectWeek}}" data-direction="left" bindtap="swiperChangeBtn">
+                         <image src="/images/core/common/left_g.png"></image>
+                    </view>
+                    <swiper circular="{{true}}" class="kb-week-swiper" bindchange="currentChange" current="{{selectWeek}}" duration="300">
+                         <block wx:for="{{_weeks}}" wx:key="{{index}}">
+                              <swiper-item class="kb-week-swiper-item">
+                                   <text class="{{index==selectWeek?'active':''}}">{{item}}</text>
+                              </swiper-item>
+                         </block>
+                    </swiper>
+                    <view class="kb-swiper-mask-right" data-target="{{selectWeek}}" data-direction="right" bindtap="swiperChangeBtn">
+                         <image src="/images/core/common/right_g.png"></image>
+                    </view>
+               </view>
+          </block>
+
+          <!--切换视图-->
+          <view class="kb-choose-view-box" bindtap="chooseView">
+               <view class="kb-choose-view">
+                    <text class="active">{{week=='*'?'期':'周'}}</text>
+                    <text>{{week=='*'?'周':'期'}}</text>
+               </view>
+          </view>
+     </view>
+
+
+
+</view>
+
+
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}" style="background-color:{{modalData.color}}">
+     <view class="modal-title">{{modalData.name}}</view>
+     <view class="modal-content">
+          <view>{{modalData.tname}}</view>
+          <view>{{modalData.week}}</view>
+          <view>{{modalData.times}}</view>
+          <view>{{modalData.room}}</view>
+     </view>
+
+</view>

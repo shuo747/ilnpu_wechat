@@ -1,0 +1,57 @@
+<!--jy.wxml-->
+<view class="container">
+     <view wx:if="{{remind}}" class="remind-box">
+          <image wx:if="{{remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
+          <block wx:else>
+               <image class="remind-img" src="/images/index/nothing.png"></image>
+               <text class="remind-text">{{remind}}</text>
+          </block>
+     </view>
+     <block wx:else>
+          <view wx:if="{{borrows.currentData==0||!borrows.currentData}}" class="remind-box">
+               <image class="remind-img" src="/images/index/nothing.png"></image>
+               <text class="remind-text">哎呀，好像没有借过书</text>
+          </view>
+          <view wx:else class="book-list">
+               <text wx:if="{{borrows.currentData>0}}" class="current-type">历史借阅记录({{borrows.currentData}}本)</text>
+               <text style="color:#a60000">{{borrows.error}}</text>
+               <block wx:for="{{borrows.borrows}}" wx:key="name" data-color="{{item.color}}">
+                    <view class="book-wraper" bindtap="showCardView" data-barcode="{{item.barcode}}" data-bname="{{item.bname}}" data-author="{{item.author}}" data-timelent="{{item.timelent}}" data-timeback="{{item.timeback}}" data-location="{{item.location}}" data-details="{{item.details}}">
+                         <view class="book-name">
+                              {{item.bname}}
+                         </view>
+                         <view class="book-name" style="color:#444; font-size:28rpx;">
+                              {{item.author}}
+                         </view>
+                         <view class="book-name" style="color:#444; font-size:28rpx;">
+                              {{item.location}}
+                         </view>
+                         <view class="book-date">
+                              <view>
+                                   <text>{{item.timelent}}</text>
+                              </view>
+                              <view>
+                                   <text>{{item.timeback}}</text>
+                              </view>
+                         </view>
+                    </view>
+               </block>
+          </view>
+     </block>
+</view>
+
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+     <view class="modal-title" style="color:#000">{{modalData.bname}}</view>
+     <view class="modal-content" style="color:#333">
+          <view>{{modalData.author}}</view>
+          <view>{{modalData.week}}</view>
+          <view>{{modalData.timelent}}</view>
+          <view>{{modalData.timeback}}</view>
+          <view>{{modalData.timelocationlent}}</view>
+          <view>{{modalData.details}}</view>    
+     </view>
+
+</view>

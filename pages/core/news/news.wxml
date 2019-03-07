@@ -1,0 +1,18 @@
+<!--xf.wxml-->
+<view class="container">
+
+     <text class="grid-remind"></text>
+
+     <block wx:for="{{news}}" wx:key="name" data-color="{{item.color}}">
+          <view class="book-wraper" bindtap="showDetails" data-index="{{index}}">
+               <view class="book-name">
+                   {{item.title}}
+               </view>
+               <view class="book-date">
+                    <view>
+                         <text>{{item.time}}</text>
+                    </view>
+               </view>
+          </view>
+     </block>
+</view>

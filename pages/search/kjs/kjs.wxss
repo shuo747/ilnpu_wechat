@@ -1,0 +1,243 @@
+/**kjs.wxss**/
+
+page {
+     position: relative;
+}
+
+.container {
+     background-color: #f7f7f7;
+     padding-bottom: 300rpx;
+     box-sizing: border-box;
+}
+
+/* ==========================================================================
+   main-roomUl
+ ============================================================================ */
+
+.main-roomUl {
+     display: flex;
+     flex-flow: column nowrap;
+     padding: 30rpx 45rpx;
+}
+
+.roomUl-floor {
+     display: flex;
+     width: 600rpx;
+     flex-flow: column nowrap;
+     margin-top: 20rpx;
+     padding: 0 0 0 65rpx;
+     /*background: url('/images/core/kjs/classroom-icon.png') no-repeat;*//*微信暂不支持静态bgimg文件，改用服务器url*/
+     background: url('https://we.cqu.pt/app/images/core/kjs/classroom-icon.png') no-repeat;
+     background-size: 30rpx 25rpx;
+     background-position: 15rpx 8rpx;
+}
+
+.floor {
+     flex: 1;
+     width: 600rpx;
+     display: flex;
+     flex-wrap: wrap;
+}
+
+.floor text {
+     padding-bottom: 25rpx;
+     width: 120rpx;
+     font-size: 11pt;
+     letter-spacing: 0.1rem;
+     text-align: center;
+}
+
+/* ==========================================================================
+   main-condition
+ ============================================================================ */
+
+.main-condition {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     z-index: 100;
+     display: flex;
+     flex-flow: column wrap;
+     width: 100%;
+     height: 240rpx;
+     border-top: 1rpx solid #f1f1f2;
+}
+
+.condition {
+     display: flex;
+     box-sizing: border-box;
+     padding: 0;
+     width: 100%;
+     height: 120rpx;
+     white-space: nowrap;
+}
+
+.condition-li {
+     display: inline-block;
+     width: 150rpx;
+     height: 120rpx;
+     line-height: 120rpx;
+     text-align: center;
+}
+
+.building-condition .condition-li {
+     width: 150rpx;
+}
+
+.day-condition .condition-li {
+     width: 150rpx;
+}
+
+.week-active, .day-active, .classTime-active, .building-active {
+     font-size: 34rpx;
+     color: #5E2572;
+     font-weight: 900;
+}
+
+.scroll-space {
+     display: inline-block;
+     width: 30rpx;
+     height: 30rpx;
+}
+
+/* main-condition > condition-week
+ ============================================================================ */
+
+.condition-week {
+     background-color: #fbfaf8;
+}
+
+.week-active {
+     /*background: url('/images/core/kjs/week-icon.png') no-repeat;*//*微信暂不支持静态bgimg文件，改用服务器url*/
+     background: url('https://we.cqu.pt/app/images/core/kjs/week-icon.png') no-repeat;
+     background-size: 100rpx 100rpx;
+     background-position: 50% 50%;
+}
+
+/* main-condition > condition-day
+ ============================================================================ */
+
+.condition-day {
+     background-color: #f1f1f2;
+}
+
+.day-active {
+     /*background: url('/images/core/kjs/day-icon.png') no-repeat;*//*微信暂不支持静态bgimg文件，改用服务器url*/
+     background: url('https://we.cqu.pt/app/images/core/kjs/day-icon.png') no-repeat;
+     background-size: 100rpx 100rpx;
+     background-position: 50% 50%;
+}
+
+/* main-condition > condition-classTime
+ ============================================================================ */
+
+.condition-classTime {
+     background-color: #fbfaf8;
+     overflow: hidden;
+}
+
+.classTime-active {
+     /*background: url('/images/core/kjs/classTimcondition-weeke-icon.png') no-repeat;*//*微信暂不支持静态bgimg文件，改用服务器url*/
+     background: url('https://we.cqu.pt/app/images/core/kjs/classTime-icon.png') no-repeat;
+     background-size: 100rpx 100rpx;
+     background-position: 50% 50%;
+}
+
+/* main-condition > condition-building
+ ============================================================================ */
+
+.condition-building {
+     background-color: #f1f1f2;
+     overflow: hidden;
+}
+
+
+.user-jy {
+     display: flex;
+     background: #fefefe;
+     border-bottom: 1rpx solid #eee;
+}
+
+.user-jy-item {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     font-size: 11pt;
+     line-height: 150%;
+     height: 150rpx;
+     padding: 20rpx;
+     border-right: 1rpx solid #eee;
+}
+
+.user-jy-dbet {
+     border: none;
+}
+
+.user-jy-hd {
+     color: #777;
+     text-align: center;
+}
+
+.user-jy-bd {
+     display: flex;
+     justify-content: center;
+}
+
+.user-jy-value {
+     text-align: center;
+     font-size: 28pt;
+     color: #a05bb9;
+     font-weight: bold;
+     line-height: 150%;
+     padding: 0 20rpx 0 30rpx;
+}
+
+.user-jy-text {
+     color: #999;
+     font-size: 10pt;
+     line-height: 200%;
+     align-self: flex-end;
+}
+
+.book-list {
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+     padding: 25rpx 30rpx;
+}
+
+.current-type {
+     color: #777;
+     font-size: 25rpx;
+     line-height: 200%;
+     margin-bottom: 15rpx;
+}
+
+.book-wraper {
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
+     justify-content: space-between;
+     overflow: hidden;
+     padding: 35rpx 30rpx 10rpx;
+     margin-bottom: 20rpx;
+     background: #fff;
+     border-radius: 3px;
+}
+
+.book-name {
+     color: #111;
+     font-size: 30rpx;
+     line-height: 135%;
+     word-break: break-all;
+}
+
+.book-date {
+     display: flex;
+     align-items: flex-end;
+     justify-content: space-between;
+     margin-top: 20rpx;
+     font-size: 25rpx;
+     color: #888;
+}

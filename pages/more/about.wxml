@@ -1,0 +1,232 @@
+<!--about.wxml-->
+<view class="container">
+     <view class="header">
+          <view class="black-cover"></view>
+          <image class="logo" src="/images/more/logo.png"></image>
+          <image class="title" src="/images/more/title.png"></image>
+     </view>
+     <view class="content">
+          <view class="version">
+               <view class="version-title">
+                    <text class="title-name">ilnpu</text>
+                    <text class="version-text">{{version}}</text>
+                    <text class="version-text"></text>
+               </view>
+               <view bindtap="toggleLog">
+                    <text class="version-log-link update-log" wx:if="{{!showLog}}">更新日志</text>
+                    <text class="version-log-link" wx:else>简介</text>
+               </view>
+          </view>
+          <view class="describe" wx:if="{{!showLog}}">
+               <text class="desc-title">简介</text>
+               <view class="desc-list">
+                    <text class="desc-list-item">官网：http://huiziya.github.io</text>
+                    <text class="desc-list-item">Github</text>
+               </view>
+               <text class="desc-content">ilnpu是一款微信小程序，由shuo747&客官开发。在本人大三上学期抽空做的（即2018年10月份），该程序参加了辽宁省新媒体设计竞赛。</text>
+               <text class="desc-content">ilnpu目前实现了以下功能，课表、成绩、考试、空教室、学生查询、一卡通、借阅、校园通知。</text>
+               <text class="desc-content">由于学业压力和各种不稳定因素，不定时更新</text>
+          </view>
+          <view class="log-list" wx:else>
+          <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.1.0 beta</text>
+                         <text class="desc-time">2019.03.02</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">更准确的描述，准备开源。</text>
+                    </view>
+                    <text class="desc-content">增加功能</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">尝试提供查询成绩缓存功能，即提供学号即可从缓存拉取成绩。</text>
+                    </view>
+               </view>
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.11 beta1</text>
+                         <text class="desc-time">2018.11.13</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">修复首页课表有课时显示异常</text>
+                         <text class="desc-list-item">修复17,18级借阅功能(待测试)</text>                         
+                    </view>
+
+                    <text class="desc-content">增加功能</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">诈尸更新成绩查询，请教务处公布后刷新查看</text>
+                    </view>
+               </view>
+
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta15</text>
+                         <text class="desc-time">2018.10.29</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">修复Android系统通知无法解析</text>
+                         <text class="desc-list-item">修复程序查询失败逻辑</text>
+                    </view>
+               </view>
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta14</text>
+                         <text class="desc-time">2018.10.29</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <text class="desc-content">增加功能</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">增加-学生查询(待测试)</text>
+                         <text class="desc-list-item">增加-校内通知查看(待测试)</text>
+                    </view>
+               </view>
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta13</text>
+                         <text class="desc-time">2018.10.20</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <text class="desc-content">增加功能</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">增加-空教室查询(待测试)</text>
+                         <text class="desc-list-item">增加-首页学生卡余额展示(待测试)</text>
+                    </view>
+               </view>
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta12</text>
+                         <text class="desc-time">2018.10.16</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <text class="desc-content">增加功能</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">增加-借阅详情(待测试)</text>
+                         <text class="desc-list-item">增加-续借功能(待测试)</text>
+                    </view>
+               </view>
+
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta11</text>
+                         <text class="desc-time">2018.10.16</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">修复课程表渲染，请刷新查看</text>
+                    </view>
+                    <text class="desc-content">增加功能</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">增加-借阅查询(待测试)</text>
+                    </view>
+               </view>
+
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta10</text>
+                         <text class="desc-time">2018.10.15</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">修复首页逻辑</text>
+                    </view>
+                    <text class="desc-content">增加功能</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">增加-借阅查询(待测试)</text>
+                    </view>
+               </view>
+
+
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta8</text>
+                         <text class="desc-time">2018.10.14</text>
+                    </view>
+                    <text class="desc-content">成绩查询上线</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">绑定账号后可查看成绩</text>
+                         <text class="desc-list-item">成绩页面点击查看详情</text>
+                    </view>
+
+                    <text class="desc-content">课表</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">增加点击课程显示课程详情</text>
+                    </view>
+
+                    <text class="desc-content">图标</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">更换首页图标，避免违和感</text>
+                    </view>
+               </view>
+
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta7</text>
+                         <text class="desc-time">2018.10.13</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">更改课程表配色-校园紫哈哈哈</text>
+                         <text class="desc-list-item">很多人说看不见课程表下的滑块。。</text>
+                    </view>
+               </view>
+
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta3</text>
+                         <text class="desc-time">2018.10.12</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">修复新用户无法获取信息</text>
+                         <text class="desc-list-item">修复用户授权</text>
+                    </view>
+               </view>
+
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta3</text>
+                         <text class="desc-time">2018.10.12</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">修复新用户无法获取信息</text>
+                         <text class="desc-list-item">修复用户授权</text>
+                    </view>
+               </view>
+
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.10 beta</text>
+                         <text class="desc-time">2018.10.12</text>
+                    </view>
+                    <text class="desc-content">修复BUG</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">修复课表</text>
+                         <text class="desc-list-item">修复首页不显示</text>
+                    </view>
+                    <text class="desc-content">优化完善</text>
+                    <view class="desc-list">
+                         <text class="desc-list-item">优化配色为官方配色</text>
+                         <text class="desc-list-item">新增四六级查询功能</text>
+                    </view>
+               </view>
+               <view class="describe">
+                    <view class="desc-title">
+                         <text class="desc-v">v1.0.6 内测版</text>
+                         <text class="desc-time">2018.10.03</text>
+                    </view>
+                    <text class="desc-content">开启内测</text>
+               </view>
+          </view>
+     </view>
+     <view class="footer">
+          <view class="footer-lanshan">
+
+               <text>ilnpu</text>
+          </view>
+          <text>shuo747 客官</text>
+          <text>Copyright @ {{year}} All Rights Reserved</text>
+     </view>
+</view>

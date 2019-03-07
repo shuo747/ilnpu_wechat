@@ -1,0 +1,54 @@
+<!--kjs.wxml-->
+<view class="container">
+     <view class="book-list">
+          <text class="current-type">查询到空教室</text>
+          <block wx:for="{{array[0]}}" wx:key="name" data-color="{{item.color}}">
+               <view class="book-wraper" bindtap="showCardView" data-barcode="{{item.barcode}}" data-bname="{{item.bname}}" data-author="{{item.author}}" data-timelent="{{item.timelent}}" data-timeback="{{item.timeback}}" data-location="{{item.location}}" data-details="{{item.details}}">
+                    <view class="book-name">
+                         教室名称：{{item[2]}}
+                    </view>
+                    <view class="book-name" style="color:#444; font-size:28rpx;">
+                         教室位置：{{item[4]}}
+                    </view>
+                    <view class="book-name" style="color:#444; font-size:28rpx;">
+                         所在楼层：{{item[6]}}
+                    </view>
+                    <view class="book-date">
+                         <view>
+                              <text>教室类型：{{item[3]}}</text>
+                         </view>
+                         <view>
+                              <text>容纳人数：{{item[5]}}</text>
+                         </view>
+                    </view>
+               </view>
+          </block>
+     </view>
+
+     <!--选择要查询的条件-->
+     <view class="main-condition">
+          <!--选择教学楼-->
+
+
+
+          <scroll-view scroll-x class="building-condition condition-building condition" catchtap="chooseDay">
+               <view class="scroll-space"></view>
+               <block wx:for="{{DATA.DAY_DATA}}" wx:key="*this">
+                    <block wx:if="{{item != ''}}">
+                         <view class="condition-li {{index == currentweekDay ? 'building-active' : ''}}" data-res="{{item}}" data-No="{{index}}">{{item}}</view>
+                    </block>
+               </block>
+               <view class="scroll-space"></view>
+          </scroll-view>
+
+          <scroll-view scroll-x class="building-condition condition-building condition" catchtap="chooseBuilding">
+               <view class="scroll-space"></view>
+               <block wx:for="{{DATA.BUILDING_DATA}}" wx:key="*this">
+                    <block wx:if="{{item != ''}}">
+                         <view class="condition-li {{index == currentbuildingNo ? 'building-active' : ''}}"data-res="{{item}}"  data-No="{{index}}">{{item}}</view>
+                    </block>
+               </block>
+               <view class="scroll-space"></view>
+          </scroll-view>
+     </view>
+</view>
