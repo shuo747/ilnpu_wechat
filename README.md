@@ -1,6 +1,5 @@
 # ilnpu
 
----
 
 > one WeChat Mini Programs for Liaoning Shihua University
 
